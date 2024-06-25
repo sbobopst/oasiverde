@@ -8,7 +8,7 @@ const Profile = () => {
             {
                 dropMenu &&
                 <ul className="relative">
-                    <div className="absolute rounded-md border border-gray-500 top-1 -end-full bg-gray-600">
+                    <div className="absolute rounded-md border border-gray-700 top-1 -end-full bg-gray-800">
                         <Link to="/login"><li className="hover:bg-green-400 rounded-md">Login</li></Link>
                         <Link to="/register"> <li className="hover:bg-green-400 rounded-md">Register</li></Link>
                     </div>
