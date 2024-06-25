@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Room 1",
+        "imageUrl": "/roomimg/room1.jpg",
+        "descr": "4 ospiti \n 2 camere da letto \n 2 letti \n 1 bagno"
+    },
+    {
+        "id": 2,
+        "name": "Room 2",
+        "imageUrl": "/roomimg/room2.jpg",
+        "descr": "4 ospiti \n 2 camere da letto \n 2 letti \n 1 bagno"
+    },
+    {
+        "id": 3,
+        "name": "Room 3",
+        "imageUrl": "/roomimg/room3.jpg",
+        "descr": "4 ospiti \n 2 camere da letto \n 2 letti \n 1 bagno"
+    },
+    {
+        "id": 4,
+        "name": "Room 4",
+        "imageUrl": "/roomimg/room4.jpg",
+        "descr": "4 ospiti \n 2 camere da letto \n 2 letti \n 1 bagno"
+    },
+    {
+        "id": 5,
+        "name": "Room 5",
+        "imageUrl": "/roomimg/room5.jpg",
+        "descr": "4 ospiti \n 2 camere da letto \n 2 letti \n 1 bagno"
+    },
+    {
+        "id": 6,
+        "name": "Room 6",
+        "imageUrl": "/roomimg/room6.jpg",
+        "descr": "4 ospiti \n 2 camere da letto \n 2 letti \n 1 bagno"
+    }
+]
