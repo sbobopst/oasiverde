@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import OpenImg from "../components/OpenImg";
 import img from '/About.jpg'
-
 const About = () => {
+    const [display, setDisplay] = useState(false);
     return (
-        <div className="pt-28 min-h-screen bg-gradient-to-b from-gray-800 to-gray-900  flex flex-col items-center pb-10">
+        <div className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-900  flex flex-col items-center pb-10">
             <div className="container mx-auto px-5 lg:px-32 text-center">
                 <h1 className="text-5xl font-extrabold text-green-800 mb-10">
                     Scopri il paesaggio<br />
                 </h1>
-                <img
-                    src={img}
-                    alt="Oasi Verde"
-                    className="w-full h-80  object-cover rounded-xl shadow-lg mb-10 transition-transform duration-500 hover:scale-105"
-                />
+                <img src={img} onClick={() => setDisplay(true)} alt="Oasi Verde" className="w-full h-80  object-cover rounded-xl shadow-lg mb-10 transition-transform duration-500 hover:scale-105" />
                 <div className="text-white">
                     <p className="text-xl  leading-relaxed mb-8">
                         Immerso nella natura, Oasi Verde è il luogo perfetto per una fuga rilassante. Situato nel cuore della campagna,
@@ -27,11 +25,10 @@ const About = () => {
                     <p className="text-xl  leading-relaxed mb-10">
                         Venite a scoprire la bellezza e la serenità di Oasi Verde. Vi aspettiamo!
                     </p>
-                    <Link to="/rooms"><button className="bg-green-600 text-white text-lg font-semibold py-3 px-8 rounded-full shadow-md hover:bg-green-700 transition-colors duration-300">
-                        Prenota Ora
-                    </button></Link>
+                    <Link to="/rooms"><button className="bg-green-600 text-white text-lg font-semibold py-3 px-8 rounded-full shadow-md hover:bg-green-700 transition-colors duration-300">Prenota Ora </button></Link>
                 </div>
             </div>
+            {display && <OpenImg index={null} imageUrl={img} onClose={() => setDisplay(false)} />}
         </div >
     );
 };

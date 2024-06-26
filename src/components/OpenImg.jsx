@@ -1,15 +1,26 @@
-import SetImg from '../../img.json';
+import { useState, useEffect } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+const OpenImg = ({ index, imageUrl, onClose }) => {
+    const [isOpen, setIsOpen] = useState(false);
 
-const OpenImg = ({ isOpen, index, onClose }) => {
-    const imageData = SetImg[index];
-    const images = imageData.imageUrl.map((imageUrl) => ({
-        src: imageUrl,
-        alt: 'immagine stanza',
-    }));
+    useEffect(() => {
+        if (index || imageUrl) {
+            setIsOpen(true);
+        }
+    }, [index, imageUrl]);
+
+    const images =
+        imageUrl ?
+            [{ src: imageUrl, alt: 'immagine stanza' }]
+            :
+            index.map((url) => ({
+                src: url,
+                alt: 'immagine stanza',
+            }));
 
     const handleClose = () => {
+        setIsOpen(false);
         onClose();
     };
 

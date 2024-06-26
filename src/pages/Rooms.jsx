@@ -3,21 +3,15 @@ import OpenImg from '../components/OpenImg';
 import { useState } from 'react';
 
 const Rooms = () => {
-    const [open, setOpen] = useState(false);
     const [selectedImg, setSelectedImg] = useState(null);
-    const handleCloseImage = () => {
-        setOpen(false);
-        setSelectedImg(null);
-    };
-
     return (
-        <div className='pt-24 relative'>
+        <div className=' relative'>
             {SetImg.map((imageData, index) => (
                 <div key={index} className='flex flex-col items-center justify-between bg-gray-900 border border-gray-800 shadow md:flex-row w-full dark:hover:bg-gray-800'>
                     <div className='flex flex-col items-center md:flex-row'>
-                        <img onClick={() => { setOpen(true); setSelectedImg(index) }} className="hover:scale-105 hover:border-0 transition-all duration-100 object-fit border-4 border-gray-900 h-48 w-screen md:w-48" src={new URL(imageData.imageUrl[0], import.meta.url).href} alt='immagine stanza' />
+                        <img onClick={() => setSelectedImg({ index, images: imageData.imageUrl })} className="hover:scale-105 hover:border-0 transition-all duration-100 object-fit border-4 border-gray-900 h-48 w-screen md:w-48" src={new URL(imageData.imageUrl[0], import.meta.url).href} alt='immagine stanza' />
                         <div className="justify-between p-4 leading-normal">
-                            <h5 className="mb-2 text-2xl font-bold  text-gray-900 dark:text-white">{imageData.name}</h5>
+                            <h5 className="mb-2 text-2xl font-zbold  text-gray-900 dark:text-white">{imageData.name}</h5>
                             <p className="mb-3 text-start whitespace-pre-line text-gray-700 dark:text-gray-400">{imageData.descr}</p>
                         </div>
                     </div>
@@ -28,7 +22,7 @@ const Rooms = () => {
 
                 </div>
             ))}
-            {selectedImg !== null && <OpenImg isOpen={open} index={selectedImg} onClose={handleCloseImage} />}
+            {selectedImg !== null && <OpenImg index={selectedImg.images} imageUrl={null} onClose={() => setSelectedImg(null)} />}
         </div >
     );
 };

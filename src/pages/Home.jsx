@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 const Home = () => {
     return (
         <div className="bg-gradient-to-b from-gray-800 to-gray-900  min-h-screen text-center flex flex-col justify-center items-center">
-            <div className="pt-24 flex flex-col gap-10 text-white">
+            <div className="flex flex-col gap-10 text-white">
                 <h1 className=' font-bold md:text-4xl text-3xl'>Benvenuto</h1>
                 <p className='font-bold md:text-xl text-lg'>
                     Scopri il lusso e il comfort delle nostre stanze uniche. <br />

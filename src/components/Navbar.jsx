@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Profile from "./Profile"
 const Navbar = () => {
     return (
-        <nav className="bg-gray-800 shadow-2xl fixed left-0 right-0 flex md:flex-row md:justify-around justify-around  place-content-center items-center min-h-24 z-10">
+        <nav className="bg-gray-800 shadow-2xl sticky left-0 right-0 flex md:flex-row md:justify-around justify-around  place-content-center items-center min-h-24 z-10">
             <div className="flex flex-col  ">
                 <Link to="/"> <h1 className="transition-all hover:scale-105 md:text-5xl text-2xl text-green-700 flex justify-center items-center font-bold ">Oasi Verde</h1> </Link>
                 <ul className="flex justify-center space-x-3 md:text-xl  text-white">

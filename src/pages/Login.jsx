@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Login = () => {
     return (
-        <div className="pt-24 bg-gradient-to-b from-gray-800 to-gray-900 flex items-center justify-center min-h-screen bg-gray-800">
+        <div className="bg-gradient-to-b from-gray-800 to-gray-900 flex items-center justify-center min-h-screen bg-gray-800">
             <div className="bg-gray-800 p-8 rounded-lg shadow-md w-full sm:max-w-md">
                 <h2 className="text-3xl text-white font-bold  mb-6 text-center">Bentornato!</h2>
                 <form className="space-y-4 text-white">
