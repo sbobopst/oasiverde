@@ -1,9 +1,13 @@
 import SetImg from '../../img.json';
 import OpenImg from '../components/OpenImg';
+import PureModal from 'react-pure-modal';
+import 'react-pure-modal/dist/react-pure-modal.min.css';
 import { useState } from 'react';
 
 const Rooms = () => {
     const [selectedImg, setSelectedImg] = useState(null);
+    const [open, setOpen] = useState(false);
+
     return (
         <div className=' relative'>
             {SetImg.map((imageData, index) => (
@@ -17,11 +21,18 @@ const Rooms = () => {
                     </div>
                     <div className='pb-5 md:pb-0 gap-1 w-32 h-full mr-4 text-center flex flex-col text-white'>
                         <button className='font-bold bg-yellow-300 border-4 border-yellow-400 transition-all duration-300 hover:scale-105' > PRENOTA</button>
-                        <button className='font-bold bg-green-500 border-4 border-green-400 hover:scale-105 transition-all duration-300 hover:border-green-500 hover:bg-green-400 '>DETTAGLI</button>
+                        <button onClick={() => setOpen(true)} className='font-bold bg-green-500 border-4 border-green-400 hover:scale-105 transition-all duration-300 hover:border-green-500 hover:bg-green-400 '>DETTAGLI</button>
+                        <PureModal
+                            header={<h1 className='text-green-800 text-start font-bold'>Ulteriori dettagli</h1>}
+                            isOpen={open}
+                            onClose={() => { setOpen(false) }}>
+                            <p className='whitespace-pre-line'>{imageData.descr}</p>
+                        </PureModal>
                     </div>
-
                 </div>
-            ))}
+
+            ))
+            }
             {selectedImg !== null && <OpenImg index={selectedImg.images} imageUrl={null} onClose={() => setSelectedImg(null)} />}
         </div >
     );
